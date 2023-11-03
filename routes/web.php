@@ -1,18 +1,14 @@
 <?php
 
+use App\Http\Controllers\AuthxController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/********AUTENTICAÇÃO********/
+//LOGIN
+Route::get('/login', [AuthxController::class, 'indexLogin']);
+#Route::post('/auth/login', [AuthxController::class, 'authLogin']);
+
+//CADASTRO
+Route::get('/cadastro', [AuthxController::class, 'indexCadastro']);
+#Route::post('/auth/cadastro', [AuthxController::class, 'authCadastro']);
