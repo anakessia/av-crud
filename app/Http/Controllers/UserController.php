@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    //VIEW HOME
+    public function indexHome(){ 
+        
+        #get produtos do usuario
+
+        return view('home'); 
+    }
+
     //VIEW PERFIL
     public function indexPerfil($id){
 
