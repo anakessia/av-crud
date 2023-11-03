@@ -25,8 +25,13 @@
         <div class="row g-3">
 
             <div class="col-sm-12">
-                <label for="nick">Nick <span class="text-danger">*</span></label>
-                <input id="nick" class="form-control form-control-lg" name="nick" type="text" placeholder="digite seu nick de player" aria-label=".form-control-lg" autofocus required>
+                <label for="email">Email <span class="text-danger">*</span></label>
+                <input id="email" class="form-control form-control-lg" name="email" type="email" placeholder="digite seu email" aria-label=".form-control-lg" autofocus required>
+            </div>
+
+            <div class="col-sm-12">
+                <label for="full_name">Nome completo <span class="text-danger">*</span></label>
+                <input id="full_name" class="form-control form-control-lg" name="full_name" type="full_name" placeholder="digite seu nome completo" aria-label=".form-control-lg" autofocus required>
             </div>
 
             <div class="col-sm-12">

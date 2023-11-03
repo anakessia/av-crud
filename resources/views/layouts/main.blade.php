@@ -11,6 +11,48 @@
 </head>
 <body class="bg-dark">
 
+    <header class="navbar navbar-expand-md nav-petplace fs-5">
+        <nav class="container">
+    
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="bdNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+            </ul>
+    
+            <hr class="d-md-none text-dark-50">
+    
+            <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <!-- Auth Links -->
+            @guest
+                <li class="nav-item col-6 col-md-auto">
+                    <a class="btn btn-outline-warning"  href="/login">Login</a>
+                    <a class="btn btn-warning" href="/cadastro">Cadastre-se</a>
+                </li>
+    
+                @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class=" nav-link dropdown-toggle text-light " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> 
+                        {{ Auth::user()->full_name }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/user/{{ Auth::user()->id }}">Meu perfil</a>
+                        <a class="dropdown-item" href="/logout">Sair</a>
+                    </div>
+                </li>
+            @endguest
+            </ul>
+    
+        </div>
+        </nav>
+    </header>
+    
     <div id="app">
         @yield('content')
     </div>

@@ -24,8 +24,8 @@
 
         <div class="row g-3">
             <div class="col-sm-12">
-                <label for="user">User <span class="text-danger">*</span></label>
-                <input id="user" class="form-control form-control-lg" name="user" type="user" placeholder="username" aria-label=".form-control-lg" autofocus required>
+                <label for="email">Email <span class="text-danger">*</span></label>
+                <input id="email" class="form-control form-control-lg" name="email" type="email" placeholder="email" aria-label=".form-control-lg" autofocus required>
             </div>
 
 
