@@ -75,4 +75,11 @@ class AuthxController extends Controller
 
       }
    }
+
+
+   //-------------SAIR---------------/
+   public function logout(){
+      Auth::logout();
+      return redirect('/');
+  }
 }

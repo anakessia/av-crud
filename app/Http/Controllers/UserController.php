@@ -2,17 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produto;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     //VIEW HOME
     public function indexHome(){ 
         
-        #get produtos do usuario
+        if(Auth::user()){
+             # exibe produtos somente do usuarios logado
+             $produtos = Produto::where('user_id', Auth::user()->id)->get();
 
-        return view('home'); 
+             if($produtos->count() > 0){
+                 return view('home', ['produtos' => $produtos]); 
+             }
+             
+             return view('home');
+        }else{
+            return view('auth/login');
+        }
     }
 
     //VIEW PERFIL
@@ -20,11 +31,10 @@ class UserController extends Controller
 
         $user = User::where('id', $id)->first();
 
-        if($user){
+        if($user->count() > 0){
             return view('/user/perfil', ['user' => $user]);
-        }else {
-            return view('404');
         }
         
+        return view('404');
     }
 }

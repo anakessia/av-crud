@@ -7,7 +7,11 @@
     <link rel="icon" href="/img/logo.png">
     <title>@yield('title')</title>
 
+    <!-- boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <!-- icon boostrap -->
+    <link rel="stylesheet" href="https://icons.getbootstrap.com/assets/font/bootstrap-icons.min.css"><link rel="stylesheet" href="/assets/css/docs.css">
 </head>
 <body class="bg-dark">
 
@@ -23,6 +27,7 @@
         <div class="collapse navbar-collapse" id="bdNavbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+                <li><a class="nav-link px-2 text-white" href="/user/{{ Auth::user()->id }}">Meu perfil</a></li>
             </ul>
     
             <hr class="d-md-none text-dark-50">
@@ -42,7 +47,6 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/user/{{ Auth::user()->id }}">Meu perfil</a>
                         <a class="dropdown-item" href="/logout">Sair</a>
                     </div>
                 </li>
@@ -57,6 +61,7 @@
         @yield('content')
     </div>
 
+    <script src="/js/config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
