@@ -1,7 +1,8 @@
 
-## Desafio - Sistema de login / visualizar, criar, alterar e excluir produtos  
-
+## CRUD de cadastro de usuários e produtos.
 <hr>
+<p>Desenvolvi este projeto CRUD (Create, Read, Update, Delete) de usuários e produtos usando a framework Laravel
+<p>O front-end foi construído usando Bootstrap e Vite.</p>
 
 ### Passo a passo para iniciar o projeto
 
