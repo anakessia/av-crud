@@ -1,7 +1,7 @@
 
 ## CRUD de cadastro de usuários e produtos.
 <hr>
-<p>Desenvolvi este projeto CRUD (Create, Read, Update, Delete) de usuários e produtos usando a framework Laravel
+<p>Desenvolvi este projeto CRUD de usuários e produtos usando a framework Laravel.</p>
 <p>O front-end foi construído usando Bootstrap e Vite.</p>
 
 ### Passo a passo para iniciar o projeto
