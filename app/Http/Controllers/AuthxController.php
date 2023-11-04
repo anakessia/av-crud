@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthxController extends Controller
 {
-   //VIEW LOGIN
-   public function indexLogin(){ return view('/auth/login'); }
-
-   //VIEW CADASTRO
-   public function indexCadastro(){ return view('/auth/cadastro'); }
-
    //-------------LOGIN---------------/
    public function authLogin(Request $request){
 

@@ -5,8 +5,9 @@
 @section('content')
 
 @if(session('success'))
-    <div class="container alert alert-success text-center" role="alert">
+    <div class="container alert alert-success text-center alert-dismissible" role="alert">
         {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
 
@@ -25,8 +26,8 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="col">Titulo</th>
-                    <th scope="col">Descrição</th>
                     <th scope="col">Qtd. Estoque</th>
+                    <th scope="col">Descrição</th>
                     <th scope="col">Foto</th>
                     <td></td>
                     <td></td>
@@ -37,8 +38,28 @@
             @foreach ($produtos as $produto)
                 <tr>
                     <td>{{ $produto->titulo }}</td>
-                    <td>{{ $produto->descricao }}</td>
-                    <td>{{ $produto->qtd_estoque }}</td>
+                    <td>{{ number_format($produto->qtd_estoque, 0, '.', '.') }}</td>
+
+                    <!-- VER DETALHES -->
+                    <td class="text-center">
+                        <a href="#" class="btn btn-success btn-sm btn_acao" data-bs-toggle="modal" data-bs-target="#verDTL{{$produto->id}}">
+                            <i class="bi bi-chat-left-text-fill"></i>
+                        </a>
+                        <!-- MODAL VER DETALHES -->
+                        <div class="modal fade text-left" id="verDTL{{$produto->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header border-0 text-muted">
+                                        <h3>Detalhes do produto:</h3>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-dark pb-5">
+                                        <p>{{ $produto->descricao }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
 
                     <!-- VER IMAGEM -->
                     <td class="text-center">
@@ -62,13 +83,13 @@
                     </td>
 
                     <td>
-                        <a data-bs-toggle="modal" data-bs-target="#alterarProduto{{$produto->id}}" class="text-success" href="#"> 
+                        <a href="#" class="btn btn-primary btn-sm btn_acao" data-bs-toggle="modal" data-bs-target="#alterarProduto{{$produto->id}}">
                             <i class="bi bi-pencil-square"></i> 
                         </a>
                     </td>
 
                     <td>
-                        <a data-bs-toggle="modal" data-bs-target="#deletarProduto{{$produto->id}}" class="text-danger" href="#"> 
+                        <a href="#" class="btn btn-danger btn-sm btn_acao" data-bs-toggle="modal" data-bs-target="#deletarProduto{{$produto->id}}"> 
                             <i class="bi bi-trash"></i> 
                         </a>
                     </td>    
@@ -81,7 +102,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Confirme se deseja deletar o produto {{$produto->id}}</p>
+                                    <p>Confirme se deseja deletar o produto {{$produto->titulo}}</p>
                                     
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
@@ -99,21 +120,33 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="POST" action="/produtos/alterar">
+
+                                    <div class="mb-4">
+                                        <form method="POST" action="/produtos/alterarfoto"  enctype="multipart/form-data">
+                                            @csrf
+                                            
+                                            <input type="hidden" name="id" value="{{$produto->id}}">
+
+                                            <!-- PREVIEW FOTO -->
+                                            <div class="text-center">
+                                                <div class="">
+                                                    <img id="output" width="100%" height="400" src="/img/produtos/produto-sem-imagem.gif" class=" py-2" >
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12  mb-3">
+                                                <label for="foto">Foto <span class="text-danger">*</span></label>
+                                                <input id="foto" type="file" accept="image/png, image/gif, image/jpeg" class="form-control" name="foto" onchange="loadfile(event)" autofocus required>
+                                            </div>
+
+                                            <button type="submit" class="w-100 btn btn-primary" data-bs-dismiss="modal">Alterar foto</button>
+                                        </form>
+                                    </div>
+
+                                    <form method="POST" action="/produtos/alterar" enctype="multipart/form-data">
                                         @csrf
                                         
                                         <input type="hidden" name="id" value="{{$produto->id}}">
-                                        
-                                         <!-- PREVIEW FOTO -->
-                                         <div class="text-center">
-                                            <div class="">
-                                                <img id="output" width="100%" height="400" src="/img/produtos/{{$produto->foto}}" class="py-2" >
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <label for="foto">Alterar Foto <span class="text-danger">*</span></label>
-                                            <input id="foto" type="file" accept="image/png, image/gif, image/jpeg" class="form-control" name="logo" onchange="loadfile(event)" autofocus required>
-                                        </div>
 
                                         <div class="col-sm-12 mb-3 ">
                                             <label for="titulo" class="text-left">Titulo <span class="text-danger">*</span></label>
