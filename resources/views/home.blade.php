@@ -185,7 +185,7 @@
 @else
     <div class="container text-center pt-3 mt-5">
         <div class="container text-center p-3">
-            <h1 class="text-light display-5">Voçê ainda tem produtos adicionados</h1>
+            <h1 class="text-light display-5">Você não tem produtos adicionados</h1>
         </div>
         <a href="#" class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#adicionarProduto">Adicione produtos</a>
     </div>
