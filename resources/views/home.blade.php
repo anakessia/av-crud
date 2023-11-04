@@ -130,13 +130,13 @@
                                             <!-- PREVIEW FOTO -->
                                             <div class="text-center">
                                                 <div class="">
-                                                    <img id="output" width="100%" height="400" src="/img/produtos/produto-sem-imagem.gif" class=" py-2" >
+                                                    <img id="output{{$produto->id}}" width="100%" height="400" src="/img/produtos/{{$produto->foto}}" class=" py-2" >
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-12  mb-3">
                                                 <label for="foto">Foto <span class="text-danger">*</span></label>
-                                                <input id="foto" type="file" accept="image/png, image/gif, image/jpeg" class="form-control" name="foto" onchange="loadfile(event)" autofocus required>
+                                                <input id="foto" type="file" accept="image/png, image/gif, image/jpeg" class="form-control" name="foto" onchange="loadfile(event, 'output{{$produto->id}}')" autofocus required>
                                             </div>
 
                                             <button type="submit" class="w-100 btn btn-primary" data-bs-dismiss="modal">Alterar foto</button>
@@ -206,12 +206,12 @@
                      <!-- PREVIEW FOTO -->
                      <div class="text-center">
                         <div class="">
-                            <img id="output" width="100%" height="400" src="/img/produtos/produto-sem-imagem.gif" class=" py-2" >
+                            <img id="outputadd" width="100%" height="400" src="/img/produtos/produto-sem-imagem.gif" class=" py-2" >
                         </div>
                     </div>
                     <div class="col-sm-12  mb-3">
                         <label for="foto">Foto <span class="text-danger">*</span></label>
-                        <input id="foto" type="file" accept="image/png, image/gif, image/jpeg" class="form-control" name="foto" onchange="loadfile(event)" autofocus required>
+                        <input id="foto" type="file" accept="image/png, image/gif, image/jpeg" class="form-control" name="foto" onchange="loadfile(event, 'outputadd')" autofocus required>
                     </div>
 
                     <div class="col-sm-12 mb-3 ">
