@@ -46,6 +46,6 @@ php artisan migrate
 
 * Acesse o projeto
 ```sh
-php artisan server
+php artisan serve
 ```
 
