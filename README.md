@@ -12,7 +12,7 @@ git clone https://github.com/anakessia/av-crud.git
 
 ```
 ```sh
-cd av_laravel
+cd av-crud
 ```
 
 * Crie o Arquivo .env
