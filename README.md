@@ -6,45 +6,46 @@
 
 ### Passo a passo para iniciar o projeto
 
-* Clone Repositório
+- Clone Repositório:
 ```sh
 git clone https://github.com/anakessia/av-crud.git
 
 ```
+- Navegue até o diretório do projeto:
 ```sh
 cd av-crud
 ```
 
-* Crie o Arquivo .env
+- Copie o Arquivo .env:
 ```sh
 cp .env.example .env
 ```
 
 
-* Atualize as variáveis de ambiente do arquivo .env (opcional)
+- Atualize as variáveis de ambiente do arquivo .env (opcional):
 ```dosini
 
 DB_DATABASE=av_crud
 
 ```
 
-* Instale as dependências do projeto
+- Instale as dependências do Composer:
 ```sh
 composer install
 ```
 
 
-* Gere a key do projeto Laravel
+- Gere uma chave no projeto:
 ```sh
 php artisan key:generate
 ```
 
-* Suba as migrates
+- Execute as migrações:
 ```sh
 php artisan migrate
 ```
 
-* Acesse o projeto
+- Inicie o servidor:
 ```sh
 php artisan serve
 ```
