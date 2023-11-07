@@ -1,8 +1,9 @@
 
 ## CRUD de cadastro de usuários e produtos.
 <hr>
-<p>Desenvolvi este projeto CRUD de usuários e produtos usando a framework Laravel.</p>
-<p>O front-end foi construído usando Bootstrap e Vite.</p>
+<p>Desenvolvi este projeto CRUD de usuários e produtos usando a framework Laravel, esse sistema permite que você gerencie os usuários e produtos como criar, visualizar, atualizar e excluir.</p>
+<p>O front-end foi construído usando Bootstrap, Vite e Blade.</p>
+
 
 ### Passo a passo para iniciar o projeto
 
