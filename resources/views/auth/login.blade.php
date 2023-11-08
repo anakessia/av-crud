@@ -1,6 +1,6 @@
 @extends('../layouts.main_form')
 
-@section('title', 'Login | Crud')
+@section('title', 'Login')
 
 @section('content')
 
@@ -25,7 +25,7 @@
         <div class="row g-3">
             <div class="col-sm-12">
                 <label for="email">Email <span class="text-danger">*</span></label>
-                <input id="email" class="form-control form-control-lg" name="email" type="email" placeholder="email" aria-label=".form-control-lg" autofocus required>
+                <input id="email" class="form-control form-control-lg" name="email" type="email" placeholder="Digite seu email" aria-label=".form-control-lg" autofocus required>
             </div>
 
 
@@ -35,10 +35,10 @@
             </div>
 
         </div>
-        <button class="w-100 my-3 btn btn-lg btn-warning" type="submit">Login</button>
+        <button class="w-100 my-3 btn btn-lg btn-warning" type="submit">Entrar</button>
     </form>
 
-    <p class="text-center h5 mb-3 fst-italic fw-normal">Não tenho cadastro - <a href="/cadastro" class="text-warning">Cadastre-se</a></p>
+    <p class="text-center h5 mb-3 fst-italic fw-normal">Ainda não tem conta ? <a href="/cadastro" style="text-decoration: none;" class="text-warning">Cadastre-se</a></p>
 </main>
 
 

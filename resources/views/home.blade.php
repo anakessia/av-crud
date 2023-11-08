@@ -61,12 +61,12 @@
                         </div>
                     </td>
 
-                    <!-- VER IMAGEM -->
+                    <!-- VISUALIZAR A IMAGEM -->
                     <td class="text-center">
                         <a href="#" class="btn btn-success btn-sm btn_acao" data-bs-toggle="modal" data-bs-target="#verIMG{{$produto->id}}">
                             <i class="bi bi-card-image"></i>
                         </a>
-                        <!-- MODAL VER IMAGEM -->
+                        <!-- MODAL DE VISUALIZAR A IMAGEM -->
                         <div class="modal fade text-left" id="verIMG{{$produto->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -130,7 +130,7 @@
                                             <!-- PREVIEW FOTO -->
                                             <div class="text-center">
                                                 <div class="">
-                                                    <img id="output{{$produto->id}}" width="100%" height="400" src="/img/produtos/{{$produto->foto}}" class=" py-2" >
+                                                    <img id="output{{$produto->id}}" width="100%" height="300" src="/img/produtos/{{$produto->foto}}" class=" py-2" >
                                                 </div>
                                             </div>
 

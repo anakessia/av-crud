@@ -13,7 +13,7 @@ class ProdutoController extends Controller
      public function indexHome(){ 
         
         if(Auth::user()){
-             # exibe produtos somente do usuarios logado
+             # Exibe os produtos somente de usuários logado
              $produtos = Produto::where('user_id', Auth::user()->id)->get();
 
              if($produtos->count() > 0){
@@ -48,11 +48,11 @@ class ProdutoController extends Controller
         $produto->qtd_estoque = $request->qtd_estoque;
         $produto->save();
 
-        return back()->with('success', "Seu produto foi inserido com sucesso ");
+        return back()->with('success', "Produto foi inserido com sucesso! ");
 
     }
 
-    //ALTERAR FOTO PRODUTO
+    //ALTERA FOTO DO PRODUTO
     public function alterar_foto_produto(Request $request){
         if(!empty($request->all())){
             
@@ -67,13 +67,13 @@ class ProdutoController extends Controller
                                 'foto'=> $fotoName,
                             ]);
             
-            #dados do produto
+            #Dados do produto
             $produto = Produto::where('id', $request->id)->first();
     
             if ($update) {
-                return back()->with('success', "A foto do produto ($produto->titulo) foi alterada com sucesso ");
+                return back()->with('success', "Foto do produto ($produto->titulo) foi alterada com sucesso!");
             }else {
-                return back()->with('error', "Error ao atualizar o produto ($produto->titulo)");
+                return back()->with('error', "Erro ao atualizar o produto ($produto->titulo)");
             }
             
         }
@@ -91,9 +91,9 @@ class ProdutoController extends Controller
                             ]);
 
             if ($update) {
-                return back()->with('success', "O produto ($request->titulo) foi alterado com sucesso ");
+                return back()->with('success', "O produto ($request->titulo) foi alterado com sucesso! ");
             }else {
-                return back()->with('error', "Error ao atualizar o produto ($request->titulo)");
+                return back()->with('error', "Erro ao atualizar o produto ($request->titulo)");
             }
             
         }
@@ -103,9 +103,9 @@ class ProdutoController extends Controller
     public function delete_produto($id){
 
         if(Produto::where("id", $id)->delete()){
-            return back()->with('success', "Produto excluido com sucesso");
+            return back()->with('success', "Produto excluído com sucesso!");
         }else{
-            return back()->with('error', "Error ao deletar produto");
+            return back()->with('error', "Erro ao deletar produto");
         }
        
     }

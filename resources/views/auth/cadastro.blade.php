@@ -1,6 +1,6 @@
 @extends('../layouts.main_form')
 
-@section('title', 'Cadastro | Crud')
+@section('title', 'Cadastro')
 
 @section('content')
 
@@ -26,12 +26,12 @@
 
             <div class="col-sm-12">
                 <label for="email">Email <span class="text-danger">*</span></label>
-                <input id="email" class="form-control form-control-lg" name="email" type="email" placeholder="digite seu email" aria-label=".form-control-lg" autofocus required>
+                <input id="email" class="form-control form-control-lg" name="email" type="email" placeholder="Digite seu email" aria-label=".form-control-lg" autofocus required>
             </div>
 
             <div class="col-sm-12">
                 <label for="full_name">Nome completo <span class="text-danger">*</span></label>
-                <input id="full_name" class="form-control form-control-lg" name="full_name" type="full_name" placeholder="digite seu nome completo" aria-label=".form-control-lg" autofocus required>
+                <input id="full_name" class="form-control form-control-lg" name="full_name" type="full_name" placeholder="Digite seu nome completo" aria-label=".form-control-lg" autofocus required>
             </div>
 
             <div class="col-sm-12">
@@ -46,7 +46,7 @@
         </div>
         <button class="w-100 my-3 btn btn-lg btn-warning" type="submit">Cadastrar</button>
 
-        <p class="text-center h5 mb-3 fst-italic fw-normal">Já tenho uma conta - <a href="/login" class="text-warning">ir para login</a></p>
+        <p class="text-center h5 mb-3 fst-italic fw-normal">Já tem uma conta ?<a href="/login" style="text-decoration: none;" class="text-warning"> Ir para login</a></p>
     </form>
 
 </main>

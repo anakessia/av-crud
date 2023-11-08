@@ -33,7 +33,7 @@ class AuthxController extends Controller
 
          //VERIFY EMAIL
          if (User::where('email', $request->email)->First()) {
-            return back()->with('error', 'O email ('.$request->email.') ja existe!');
+            return back()->with('error', 'O email ('.$request->email.') já existe!');
          }
          
          //VALIDA SENHA
@@ -41,7 +41,7 @@ class AuthxController extends Controller
             return back()->with('error', 'Confirmação de senha não confere');
          }
 
-         //VERIFICA SE O ID JA EXISTE NO BANCO
+         //VERIFICA SE O ID JÁ EXISTE NO BANCO
          do {
             $randomNumber = '';
             for ($i = 0; $i < 6; $i++) {
@@ -49,7 +49,7 @@ class AuthxController extends Controller
             }
          } while (User::where('id', $randomNumber)->exists());
 
-         //CRIAR USER
+         //CRIAR USUÁRIO
          $user = new User;
          $user->id = $randomNumber;
          $user->email = $request->email;

@@ -12,7 +12,7 @@
             <p>A página que você procura não existe.</p>
             <p>Verifique o endereço digitado ou clique o link abaixo.</p>
 
-            <a href="/" class="btn btn-lg btn-outline-warning">IR para pagina inicial</a>
+            <a href="/" class="btn btn-lg btn-outline-warning">Ir para página inicial</a>
         </div>
 
     </div>
