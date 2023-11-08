@@ -22,9 +22,9 @@
 
         <img src="/img/users/{{$user->foto}}" width="200" height="200" class="rounded-circle py-2">
         <h2>{{ $user->full_name }}</h2>
-        <span class="text-white-50 mt-0"><i>User ID: {{$user->id}}</i></span>
+        <span class="text-white-50 mt-0"><i>ID: {{$user->id}}</i></span>
         <br>
-        <span class="text-white-50 mt-0"><i>User EMAIL: {{$user->email}}</i></span>
+        <span class="text-white-50 mt-0"><i>EMAIL: {{$user->email}}</i></span>
 
     </div>
 
