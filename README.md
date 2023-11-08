@@ -1,50 +1,53 @@
 
-## Desafio - Sistema de login / visualizar, criar, alterar e excluir produtos  
-
+## CRUD de cadastro de usuários e produtos.
 <hr>
+<p>Desenvolvi este projeto CRUD de usuários e produtos usando a framework Laravel, esse sistema permite que você gerencie os usuários e produtos como criar, visualizar, atualizar e excluir.</p>
+<p>O front-end foi construído usando Bootstrap, Vite e Blade.</p>
+
 
 ### Passo a passo para iniciar o projeto
 
-* Clone Repositório
+- Clone Repositório:
 ```sh
 git clone https://github.com/anakessia/av-crud.git
 
 ```
+- Navegue até o diretório do projeto:
 ```sh
-cd av_laravel
+cd av-crud
 ```
 
-* Crie o Arquivo .env
+- Copie o Arquivo .env:
 ```sh
 cp .env.example .env
 ```
 
 
-* Atualize as variáveis de ambiente do arquivo .env (opcional)
+- Atualize as variáveis de ambiente do arquivo .env (opcional):
 ```dosini
 
 DB_DATABASE=av_crud
 
 ```
 
-* Instale as dependências do projeto
+- Instale as dependências do Composer:
 ```sh
 composer install
 ```
 
 
-* Gere a key do projeto Laravel
+- Gere uma chave no projeto:
 ```sh
 php artisan key:generate
 ```
 
-* Suba as migrates
+- Execute as migrações:
 ```sh
 php artisan migrate
 ```
 
-* Acesse o projeto
+- Inicie o servidor:
 ```sh
-php artisan server
+php artisan serve
 ```
 
