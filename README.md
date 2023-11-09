@@ -51,3 +51,8 @@ php artisan migrate
 php artisan serve
 ```
 
+- Acesse o projeto no navegador:
+```sh
+http://127.0.0.1:8000
+```
+
