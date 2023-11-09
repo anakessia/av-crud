@@ -20,18 +20,18 @@ class AuthxController extends Controller
               return redirect('/user/'.Auth::user()->id);
           }
           
-          return back()->with('error', 'Crendencias invalidas');
+          return back()->with('error', 'Crendenciais inválidas');
           
       }
 
-      return back()->with('error', 'Crendencias invalidas');
+      return back()->with('error', 'Crendenciais inválidas');
    }
 
    //-------------CADASTRO---------------/
    public function authCadastro(Request $request){
       if(!empty($request)){
 
-         //VERIFY EMAIL
+         //VERIFICA EMAIL
          if (User::where('email', $request->email)->First()) {
             return back()->with('error', 'O email ('.$request->email.') já existe!');
          }
@@ -65,7 +65,7 @@ class AuthxController extends Controller
 
       }else{
 
-          return back()->with('error', 'Error ao fazer cadastro');
+          return back()->with('error', 'Erro ao fazer cadastro');
 
       }
    }
